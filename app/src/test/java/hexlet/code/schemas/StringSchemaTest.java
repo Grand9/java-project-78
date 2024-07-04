@@ -3,7 +3,8 @@ package hexlet.code.schemas;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class StringSchemaTest {
 
@@ -15,43 +16,43 @@ class StringSchemaTest {
     }
 
     @Test
-    void minLength_valid() {
+    void minLengthValid() {
         schema.minLength(3);
         assertTrue(schema.isValid("abc"));
     }
 
     @Test
-    void minLength_invalid() {
+    void minLengthInvalid() {
         schema.minLength(5);
         assertFalse(schema.isValid("abc"));
     }
 
     @Test
-    void contains_valid() {
+    void containsValid() {
         schema.contains("abc");
         assertTrue(schema.isValid("defabcghi"));
     }
 
     @Test
-    void contains_invalid() {
+    void containsInvalid() {
         schema.contains("abc");
         assertFalse(schema.isValid("defghijk"));
     }
 
     @Test
-    void required_valid() {
+    void requiredValid() {
         schema.required();
         assertTrue(schema.isValid("abc"));
     }
 
     @Test
-    void required_null_invalid() {
+    void requiredNullInvalid() {
         schema.required();
         assertFalse(schema.isValid(null));
     }
 
     @Test
-    void required_empty_invalid() {
+    void requiredEmptyInvalid() {
         schema.required();
         assertFalse(schema.isValid(""));
     }
