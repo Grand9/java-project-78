@@ -1,4 +1,4 @@
-name: Java CI
+name: Build
 
 on:
   push:
@@ -14,22 +14,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Set up JDK
-        uses: actions/setup-java@v2
+      - name: Set up JDK 21
+        uses: actions/setup-java@v3
         with:
-          java-version: '21'  
-
-      - name: Сборка и тестирование с помощью Gradle
-        run: |
-          ./gradlew build jacocoTestReport
-          ./gradlew checkstyleMain  # По желанию можно запустить проверку стиля кода
-
-      - name: Публикация отчета о покрытии кода
-        if: ${{ github.event_name == 'push' }}
+          java-version: '21'
+          distribution: 'temurin'  
+      - uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 8.7
+          arguments: build
+          build-root-directory: app
+      - run: cd app && ./gradlew checkstyleMain
+      - run: cd app && ./gradlew test
+      - name: Publish code coverage
         uses: paambaati/codeclimate-action@v5.0.0
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
           JACOCO_SOURCE_PATH: app/src/main/java
         with:
-          coverageCommand: "cat app/build/reports/jacoco/test/jacocoTestReport.xml"
+          coverageCommand: make report
+          coverageLocations: ${{ github.workspace }}/app/build/reports/jacoco/test/jacocoTestReport.xml:jacoco
