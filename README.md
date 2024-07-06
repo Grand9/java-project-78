@@ -115,6 +115,6 @@ System.out.println(schema.isValid(human3)); // false
 [![Maintainability](https://api.codeclimate.com/v1/badges/23b8ae5fdd3689fd8835/maintainability)](https://codeclimate.com/github/Grand9/java-project-78/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/23b8ae5fdd3689fd8835/test_coverage)](https://codeclimate.com/github/Grand9/java-project-78/test_coverage)
 ### asciinema
-[![asciicast](text.svg)](text)
+[![asciicast](https://asciinema.org/a/NtQ6xBownxYFN2H8WEffvtcS1.svg)](https://asciinema.org/a/NtQ6xBownxYFN2H8WEffvtcS1)
 
 ---
