@@ -12,6 +12,7 @@ public abstract class BaseSchema<T> {
         checks.put(name, predicate);
     }
 
+    @SuppressWarnings("unchecked")
     public boolean isValid(Object value) {
         return checks.values().stream().allMatch(check -> check.test((T) value));
     }
