@@ -25,7 +25,7 @@ public final class NumberSchema extends BaseSchema<Integer> {
     }
 
     @Override
-    public boolean isValid(Integer number) {
+    public boolean isValid(Object number) {
         return super.isValid(number);
     }
 }
