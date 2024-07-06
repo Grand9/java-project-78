@@ -110,7 +110,7 @@ System.out.println(schema.isValid(human3)); // false
 
 ### Hexlet Tests and Linter Status:
 [![Actions Status](https://github.com/Grand9/java-project-78/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Grand9/java-project-78/actions)
-[![Actions Status](https://github.com/Grand9/java-project-78/actions/workflows/ci.yml/badge.svg)](https://github.com/Grnd9/java-project-78/actions)
+[![Actions Status](https://github.com/Grand9/java-project-78/actions/workflows/ci.yml/badge.svg)](https://github.com/Grand9/java-project-78/actions)
 ### Code Climate Badges
 [![Maintainability](https://api.codeclimate.com/v1/badges/23b8ae5fdd3689fd8835/maintainability)](https://codeclimate.com/github/Grand9/java-project-78/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/23b8ae5fdd3689fd8835/test_coverage)](https://codeclimate.com/github/Grand9/java-project-78/test_coverage)
